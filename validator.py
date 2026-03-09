@@ -6,7 +6,7 @@ from datetime import datetime
 # Validation Functions
 
 def valid_mail(email):
-    pattern=r'^[\w\.-]+@[\w\.-]+\.w+$' #pattern for checking the authenticity of an email address
+    pattern=r'^[\w\.-]+@[\w\.-]+\.\w+$' #pattern for checking the authenticity of an email address
     return bool(re.match(pattern,email))
 
 def valid_phone(phone):

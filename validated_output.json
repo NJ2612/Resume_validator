@@ -1,6 +1,7 @@
 {
     "validated_sections": {
         "name": "Naina Joshi",
+        "email": "naina@gmail.com",
         "phone": "9876543210",
         "experience": [
             {
@@ -22,9 +23,7 @@
             "Machine Learning"
         ]
     },
-    "invalid_sections": {
-        "email": "Invalid email format"
-    },
+    "invalid_sections": {},
     "grey_area": {
         "education": [
             {
