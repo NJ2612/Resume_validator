@@ -1,0 +1,20 @@
+{
+    "validated_sections": {
+        "name": "Rahul Mehta",
+        "email": "rahul@gmail.com",
+        "links": [
+            "https://github.com"
+        ]
+    },
+    "invalid_sections": {
+        "phone": {
+            "value": "12345",
+            "error": "Phone must be 10 digits"
+        }
+    },
+    "grey_area": {
+        "skills": [
+            "Java"
+        ]
+    }
+}

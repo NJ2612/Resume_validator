@@ -1,21 +1,33 @@
-import json
 import re
 import requests
 from datetime import datetime
 
+
+# -------------------------
 # Validation Functions
+# -------------------------
 
 def valid_mail(email):
-    pattern=r'^[\w\.-]+@[\w\.-]+\.\w+$' #pattern for checking the authenticity of an email address
-    return bool(re.match(pattern,email))
+    if not email:
+        return False
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    return bool(re.match(pattern, email))
+
 
 def valid_phone(phone):
-    return phone.isdigit() and len(phone)==10
+    if not phone:
+        return False
+    return phone.isdigit() and len(phone) == 10
+
 
 def valid_name(name):
-    return isinstance(name, str) and len(name.strip()) > 0
+    return isinstance(name, str) and len(name.strip()) > 2
+
 
 def valid_dates(start, end):
+
+    if not start or not end:
+        return False
 
     try:
         start_date = datetime.strptime(start, "%Y-%m")
@@ -25,19 +37,23 @@ def valid_dates(start, end):
 
     except:
         return False
-    
+
+
 def check_link(url):
 
     try:
-        response = requests.get(url, timeout=5)
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, headers=headers, timeout=5)
 
-        if response.status_code == 200:
-            return True
-
-        return False
+        return response.status_code == 200
 
     except:
         return False
+
+
+# -------------------------
+# Main Validation Engine
+# -------------------------
 
 def validate_resume(data):
 
@@ -51,15 +67,21 @@ def validate_resume(data):
     if valid_name(name):
         validated["name"] = name
     else:
-        invalid["name"] = "Invalid name format"
+        invalid["name"] = {
+            "value": name,
+            "error": "Invalid name format"
+        }
 
     # -------- Email --------
-    email = data.get("email")
+    email = data.get("email", "").strip()
 
     if valid_mail(email):
         validated["email"] = email
     else:
-        invalid["email"] = "Invalid email format"
+        invalid["email"] = {
+            "value": email,
+            "error": "Invalid email format"
+        }
 
     # -------- Phone --------
     phone = data.get("phone")
@@ -67,12 +89,15 @@ def validate_resume(data):
     if valid_phone(phone):
         validated["phone"] = phone
     else:
-        invalid["phone"] = "Phone must be 10 digits"
+        invalid["phone"] = {
+            "value": phone,
+            "error": "Phone must be 10 digits"
+        }
 
     # -------- Education --------
-    education_valid = []
-    education_invalid = []
-    education_grey = []
+    edu_valid = []
+    edu_invalid = []
+    edu_grey = []
 
     for edu in data.get("education", []):
 
@@ -81,26 +106,25 @@ def validate_resume(data):
         status = edu.get("status")
 
         if status == "Enrolled":
-            education_grey.append(edu)
+            edu_grey.append(edu)
 
         elif valid_dates(start, end):
-            education_valid.append(edu)
+            edu_valid.append(edu)
 
         else:
-            education_invalid.append({
+            edu_invalid.append({
                 "data": edu,
                 "error": "Invalid date sequence"
             })
 
-    if education_valid:
-        validated["education"] = education_valid
+    if edu_valid:
+        validated["education"] = edu_valid
 
-    if education_invalid:
-        invalid["education"] = education_invalid
+    if edu_invalid:
+        invalid["education"] = edu_invalid
 
-    if education_grey:
-        grey["education"] = education_grey
-
+    if edu_grey:
+        grey["education"] = edu_grey
 
     # -------- Experience --------
     exp_valid = []
@@ -108,7 +132,10 @@ def validate_resume(data):
 
     for exp in data.get("experience", []):
 
-        if valid_dates(exp["start_date"], exp["end_date"]):
+        start = exp.get("start_date")
+        end = exp.get("end_date")
+
+        if valid_dates(start, end):
             exp_valid.append(exp)
         else:
             exp_invalid.append({
@@ -121,7 +148,6 @@ def validate_resume(data):
 
     if exp_invalid:
         invalid["experience"] = exp_invalid
-
 
     # -------- Projects --------
     project_valid = []
@@ -153,7 +179,6 @@ def validate_resume(data):
     if project_grey:
         grey["projects"] = project_grey
 
-
     # -------- Links --------
     valid_links = []
     invalid_links = []
@@ -174,7 +199,6 @@ def validate_resume(data):
     if invalid_links:
         invalid["links"] = invalid_links
 
-
     # -------- Skills --------
     skills = data.get("skills", [])
 
@@ -183,26 +207,8 @@ def validate_resume(data):
     else:
         grey["skills"] = skills
 
-
     return {
         "validated_sections": validated,
         "invalid_sections": invalid,
         "grey_area": grey
     }
-
-
-# -------------------------
-# Runner
-# -------------------------
-
-if __name__ == "__main__":
-
-    with open("sample_resume.json", "r") as f:
-        resume = json.load(f)
-
-    result = validate_resume(resume)
-
-    with open("validated_output.json", "w") as f:
-        json.dump(result, f, indent=4)
-
-    print("Validation Complete")

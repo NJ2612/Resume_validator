@@ -1,0 +1,49 @@
+{
+    "validated_sections": {},
+    "invalid_sections": {
+        "name": {
+            "value": "A",
+            "error": "Invalid name format"
+        },
+        "email": {
+            "value": "invalidemail",
+            "error": "Invalid email format"
+        },
+        "phone": {
+            "value": "123",
+            "error": "Phone must be 10 digits"
+        },
+        "education": [
+            {
+                "data": {
+                    "institution": "XYZ College",
+                    "degree": "B.Tech",
+                    "start_date": "2024-08",
+                    "end_date": "2022-05",
+                    "status": "Completed"
+                },
+                "error": "Invalid date sequence"
+            }
+        ],
+        "projects": [
+            {
+                "data": {
+                    "title": "ML Model",
+                    "link": "https://fakegithub123.com"
+                },
+                "error": "Broken project link"
+            }
+        ],
+        "links": [
+            {
+                "url": "https://invalidsite123.com",
+                "error": "Broken link"
+            }
+        ]
+    },
+    "grey_area": {
+        "skills": [
+            "Python"
+        ]
+    }
+}

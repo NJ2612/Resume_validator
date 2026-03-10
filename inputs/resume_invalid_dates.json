@@ -1,0 +1,25 @@
+{
+"name": "Sneha Kapoor",
+"email": "sneha@gmail.com",
+"phone": "9123456789",
+
+"education": [
+{
+"institution": "Delhi University",
+"degree": "B.Sc",
+"start_date": "2023-08",
+"end_date": "2021-05",
+"status": "Completed"
+}
+],
+
+"experience": [],
+
+"projects": [],
+
+"skills": ["Python", "Statistics"],
+
+"links": [
+"https://github.com"
+]
+}

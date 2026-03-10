@@ -1,0 +1,38 @@
+{
+"name": "Aman Sharma",
+"email": "aman.sharma@gmail.com",
+"phone": "9876543210",
+
+"education": [
+{
+"institution": "IIT Delhi",
+"degree": "B.Tech",
+"start_date": "2020-08",
+"end_date": "2024-05",
+"status": "Completed"
+}
+],
+
+"experience": [
+{
+"company": "TechCorp",
+"role": "Software Engineer Intern",
+"start_date": "2023-01",
+"end_date": "2023-06"
+}
+],
+
+"projects": [
+{
+"title": "AI Resume Analyzer",
+"link": "https://github.com"
+}
+],
+
+"skills": ["Python", "Machine Learning", "Data Structures"],
+
+"links": [
+"https://github.com",
+"https://linkedin.com"
+]
+}
