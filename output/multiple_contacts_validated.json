@@ -1,0 +1,24 @@
+{
+    "validated": {
+        "name": "Amit Singh",
+        "emails": [
+            "amit@gmail.com"
+        ],
+        "phones": [
+            "+91 9876543210"
+        ],
+        "skills": [
+            "Python",
+            "Docker"
+        ]
+    },
+    "invalid": {
+        "emails": [
+            "amit@@gmail.com"
+        ],
+        "phones": [
+            "1234"
+        ]
+    },
+    "suspicious": {}
+}

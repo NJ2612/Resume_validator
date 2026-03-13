@@ -1,0 +1,17 @@
+{
+    "validated": {
+        "name": "Karan Patel",
+        "emails": [
+            "karan@gmail.com"
+        ],
+        "phones": [
+            "9876543210"
+        ],
+        "skills": [
+            "C++",
+            "Python"
+        ]
+    },
+    "invalid": {},
+    "suspicious": {}
+}

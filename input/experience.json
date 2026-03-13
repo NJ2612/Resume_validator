@@ -1,0 +1,14 @@
+{
+  "name": "Sneha Kapoor",
+  "email": "sneha@gmail.com",
+  "phone": "9876543210",
+  "skills": ["Python", "Data Science"],
+  "experience": [
+    {
+      "role": "Incoming Analyst",
+      "company": "Future Corp",
+      "start": "2026-07",
+      "end": "Present"
+    }
+  ]
+}

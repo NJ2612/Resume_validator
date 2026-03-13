@@ -1,0 +1,10 @@
+{
+  "name": "Priya Sharma",
+  "emails": ["priya@gmail.com"],
+  "phone_numbers": [
+    "+91 9876543210",
+    "98765",
+    "123456789012"
+  ],
+  "skills": ["Java", "Spring Boot"]
+}

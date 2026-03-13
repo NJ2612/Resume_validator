@@ -1,0 +1,12 @@
+{
+  "name": "Amit Singh",
+  "emails": [
+    "amit@gmail.com",
+    "amit@@gmail.com"
+  ],
+  "phone_numbers": [
+    "+91 9876543210",
+    "1234"
+  ],
+  "skills": ["Python", "Docker"]
+}

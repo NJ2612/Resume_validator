@@ -1,0 +1,17 @@
+{
+    "validated": {
+        "name": "Arjun Verma",
+        "emails": [
+            "candidate..typo@gmail.com"
+        ],
+        "phones": [
+            "9876543210"
+        ],
+        "skills": [
+            "C++",
+            "Python"
+        ]
+    },
+    "invalid": {},
+    "suspicious": {}
+}

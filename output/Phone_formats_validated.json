@@ -1,0 +1,22 @@
+{
+    "validated": {
+        "name": "Priya Sharma",
+        "emails": [
+            "priya@gmail.com"
+        ],
+        "phones": [
+            "+91 9876543210",
+            "123456789012"
+        ],
+        "skills": [
+            "Spring Boot",
+            "Java"
+        ]
+    },
+    "invalid": {
+        "phones": [
+            "98765"
+        ]
+    },
+    "suspicious": {}
+}

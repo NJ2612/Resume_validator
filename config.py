@@ -1,0 +1,7 @@
+INPUT_FOLDER = "input"
+OUTPUT_FOLDER = "output"
+
+REQUEST_TIMEOUT = 5
+REQUEST_DELAY = 0.3
+
+USER_AGENT = "ResumeValidator/1.0"

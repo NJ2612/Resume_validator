@@ -1,0 +1,7 @@
+{
+  "name": 12345,
+  "emails": ["invalidemail"],
+  "phone_numbers": ["abcdef"],
+  "skills": ["   ", null],
+  "links": ["https://fakeinvaliddomain12345.com"]
+}

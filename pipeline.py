@@ -1,35 +1,44 @@
 import os
 import json
-from validator import validate_resume
 
-
-INPUT_FOLDER = "inputs"
-OUTPUT_FOLDER = "output"
+from config import INPUT_FOLDER, OUTPUT_FOLDER
+from validator.engine import validate_resume
 
 
 def run_pipeline():
+
+    if not os.path.exists(INPUT_FOLDER):
+        os.makedirs(INPUT_FOLDER)
+        print("Input folder created. Add JSON resumes inside.")
+        return
 
     if not os.path.exists(OUTPUT_FOLDER):
         os.makedirs(OUTPUT_FOLDER)
 
     for file in os.listdir(INPUT_FOLDER):
 
-        if file.endswith(".json"):
+        if not file.endswith(".json"):
+            continue
 
-            input_path = os.path.join(INPUT_FOLDER, file)
+        input_path = os.path.join(INPUT_FOLDER, file)
 
+        try:
             with open(input_path, "r") as f:
                 data = json.load(f)
 
-            result = validate_resume(data)
+        except Exception:
+            print(f"Skipping invalid JSON: {file}")
+            continue
 
-            output_file = file.replace(".json", "_output.json")
-            output_path = os.path.join(OUTPUT_FOLDER, output_file)
+        result = validate_resume(data)
 
-            with open(output_path, "w") as f:
-                json.dump(result, f, indent=4)
+        output_file = file.replace(".json", "_validated.json")
+        output_path = os.path.join(OUTPUT_FOLDER, output_file)
 
-            print(f"Processed: {file}")
+        with open(output_path, "w") as f:
+            json.dump(result, f, indent=4)
+
+        print(f"Processed: {file}")
 
 
 if __name__ == "__main__":

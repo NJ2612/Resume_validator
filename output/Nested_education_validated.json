@@ -1,0 +1,17 @@
+{
+    "validated": {
+        "name": "Riya Gupta",
+        "emails": [
+            "riya@gmail.com"
+        ],
+        "phones": [
+            "9876543210"
+        ],
+        "skills": [
+            "Python",
+            "ML"
+        ]
+    },
+    "invalid": {},
+    "suspicious": {}
+}

@@ -1,0 +1,17 @@
+{
+    "validated": {
+        "name": "Dr.",
+        "emails": [
+            "doctor@example.com"
+        ],
+        "phones": [
+            "9876543210"
+        ],
+        "skills": [
+            "Python",
+            "AI"
+        ]
+    },
+    "invalid": {},
+    "suspicious": {}
+}

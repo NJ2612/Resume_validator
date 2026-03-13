@@ -1,0 +1,21 @@
+{
+    "validated": {
+        "name": "Dev Tester",
+        "emails": [
+            "dev@test.com"
+        ],
+        "phones": [
+            "9876543210"
+        ],
+        "skills": [
+            "Testing",
+            "Python"
+        ]
+    },
+    "invalid": {
+        "links": [
+            "http://localhost:8080/myrepo"
+        ]
+    },
+    "suspicious": {}
+}

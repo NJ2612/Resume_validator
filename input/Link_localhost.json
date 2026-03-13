@@ -1,0 +1,9 @@
+{
+  "name": "Dev Tester",
+  "email": "dev@test.com",
+  "phone": "9876543210",
+  "skills": ["Python", "Testing"],
+  "links": [
+    "http://localhost:8080/myrepo"
+  ]
+}

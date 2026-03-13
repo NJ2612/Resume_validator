@@ -1,0 +1,27 @@
+{
+    "validated": {
+        "name": "Dr.",
+        "emails": [
+            "candidate..typo@gamil.com"
+        ],
+        "phones": [
+            "+91 5876543210"
+        ],
+        "skills": [
+            "C++",
+            "Python"
+        ],
+        "links": [
+            "https://www.linkedin.com/"
+        ]
+    },
+    "invalid": {
+        "phones": [
+            "98765"
+        ],
+        "links": [
+            "http://localhost:8080/my-local-repo"
+        ]
+    },
+    "suspicious": {}
+}

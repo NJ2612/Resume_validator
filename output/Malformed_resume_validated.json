@@ -1,0 +1,18 @@
+{
+    "validated": {},
+    "invalid": {
+        "name": 12345,
+        "emails": [
+            "invalidemail"
+        ],
+        "phones": [
+            "abcdef"
+        ],
+        "links": [
+            "https://fakeinvaliddomain12345.com"
+        ]
+    },
+    "suspicious": {
+        "skills": []
+    }
+}

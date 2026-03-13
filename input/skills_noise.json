@@ -1,0 +1,12 @@
+{
+  "name": "Karan Patel",
+  "email": "karan@gmail.com",
+  "phone": "9876543210",
+  "skills": [
+    "Python",
+    "   ",
+    "",
+    "C++",
+    null
+  ]
+}
