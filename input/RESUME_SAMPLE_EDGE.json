@@ -1,0 +1,34 @@
+{
+  "name": "C",
+  "emails": [
+    "gmail.com",
+    "fake@gamil.com"
+  ],
+  "phone_numbers": [
+    "+91 5876543210",
+    "98765"
+  ],
+  "linkedin": "https://www.linkedin.com/",
+  "github": "http://localhost:8080/my-local-repo",
+  "skills": ["Python", "   ", "C++", "Talking","Walking"],
+  "education": {
+    "uug": {
+      "degree": "B.Tech in Arts",
+      "institution": "State University",
+      "duration": "2020 to 2028",
+      "grade": "None"
+    }
+  },
+  "experience": [
+    {
+      "role": "Incoming Analyst",
+      "company": "Future Corp",
+      "start": "2026-06",
+      "end": "Present",
+      "points": {
+        "1": "I will do things here."
+      }
+    }
+  ],
+  "projects": ["C++"]
+}

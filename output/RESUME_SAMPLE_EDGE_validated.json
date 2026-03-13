@@ -1,0 +1,32 @@
+{
+    "validated": {
+        "emails": [
+            "fake@gamil.com"
+        ],
+        "phones": [
+            "+91 5876543210"
+        ],
+        "skills": [
+            "Walking",
+            "C++",
+            "Talking",
+            "Python"
+        ],
+        "links": [
+            "https://www.linkedin.com/"
+        ]
+    },
+    "invalid": {
+        "name": "C",
+        "emails": [
+            "gmail.com"
+        ],
+        "phones": [
+            "98765"
+        ],
+        "links": [
+            "http://localhost:8080/my-local-repo"
+        ]
+    },
+    "suspicious": {}
+}
